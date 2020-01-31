@@ -4,7 +4,7 @@ using namespace std;
 #include "functions.hpp"
 
 int main(void) {
-    
+   
     level ();
     
     int x_pos = 1;
