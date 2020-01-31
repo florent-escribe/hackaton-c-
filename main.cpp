@@ -11,23 +11,23 @@ int main(void) {
 
     cbreak();    
     keypad(stdscr, TRUE);
-    level ();
+    vector<string> map = level ();
     noecho();
-    int x_pos = 10;  //coordonnées du héros
-    int y_pos = 17;
+    int x_h = 3;  //coordonnées du héros
+    int y_h = 4;
 
-    move(x_pos,y_pos);
-    start_color();
-	init_pair(1, COLOR_YELLOW, COLOR_BLACK);
-	attron(COLOR_PAIR(1));
-    addch('@');
+
+    int* x_ph = &x_h;   //pointeurs vers position du héros
+    int* y_ph = &y_h;
+
+    mvaddch(*x_ph,*y_ph,'@');
+
     refresh();
 
+    Monstre monstre = Monstre ('a','a',1,1,4,15);
+    mvaddch(4,15,'M');
+    refresh();
 
-    //while(1) {
-    //        move ();
-        
-    //}
 
     char c = getch();
     if (c == 'i') {    
@@ -43,7 +43,13 @@ int main(void) {
         mvwin(stdscr,0,0);
         refresh();
     };
+
     getch();
+    while(1) {
+        move_hero (x_ph,y_ph, map);
+        move_monster (monstre, x_ph, y_ph, map);
+    };
+
     endwin();
 
 

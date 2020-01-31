@@ -1,17 +1,13 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
+#include <vector>
 #include <ncurses.h>
-#include<vector>
-#include<string>
-
-vector<string> level ();
-
-void move_hero (int* x_p,int* y_p, vector<string> carte);
+#include "functions.hpp"
 
 
 class Monstre {
 public:
-    char Name;      //plutot string en fait
+    vector<char> Name;
     char Id;
     int PV;
     int dg;
@@ -19,7 +15,7 @@ public:
     int y;
 
 
-    Monstre(char N, char I, int P, int d, int X, int Y): Name(N), Id(I), PV(P), dg(d), x(X), y(Y) {};
+    Monstre(vector<char> N, char I, int P, int d, int X, int Y): Name(N), Id(I), PV(P), dg(d), x(X), y(Y) {};
     Monstre () {};
 
     void mouvement(int x_pos, int y_pos) {
@@ -34,7 +30,6 @@ public:
     };
 };
 
-void move_monster(Monstre monstre,int* x_p,int* y_p, vector<string> carte);
 
 
 class Personnage
@@ -117,4 +112,3 @@ public:
         };
     };
 };
-
