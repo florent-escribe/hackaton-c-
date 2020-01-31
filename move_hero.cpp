@@ -3,8 +3,7 @@ using namespace std;
 #include <ncurses.h>
 #include "functions.hpp"
 
-void move_hero (int* x_p,int* y_p, vector<string> carte) {
-    char c = getch();
+void move_hero (int* x_p,int* y_p, vector<string> carte, char c) {
     if(c == 'z') {      //TOP
         if (carte[*x_p-1][*y_p]=='.' || carte[*x_p-1][*y_p]=='#' || carte[*x_p-1][*y_p]=='+'){
             mvaddch(*x_p,*y_p,carte[*x_p][*y_p]);
