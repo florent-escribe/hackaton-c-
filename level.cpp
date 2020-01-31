@@ -7,6 +7,7 @@ using namespace std;
 
 vector<string> level () {
     vector<string> tab {};
+    tab.push_back("                    ");
     initscr();
     move(1,0);             
     printw("------    ----------\n");
@@ -22,6 +23,12 @@ vector<string> level () {
     printw("|....|              \n");
     tab.push_back("|....|              ");
     printw("------              \n");
-    refresh();        
+    tab.push_back("------              ");      //je laisse de la place en bas pour bouger
+    tab.push_back("                    ");
+    tab.push_back("                    ");
+    tab.push_back("                    ");
+    tab.push_back("                    ");
+    refresh();
+    return tab;    
   
 }

@@ -9,8 +9,8 @@ int main(void) {
     keypad(stdscr, TRUE);
     vector<string> map = level ();
     noecho();
-    int x_h = 10;  //coordonnées du héros
-    int y_h = 17;
+    int x_h = 3;  //coordonnées du héros
+    int y_h = 4;
 
     int* x_ph = &x_h;   //pointeurs vers position du héros
     int* y_ph = &y_h;
@@ -24,7 +24,7 @@ int main(void) {
     };
 
 
-    getch();
+
     endwin();
 
     return 0;
