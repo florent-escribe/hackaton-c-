@@ -18,50 +18,9 @@ int main(void) {
 
 
     while(1) {
-            char c = getch();
-            if(c == 'z') {      //TOP
-                mvaddch(x_pos,y_pos,'.');
-                x_pos-=1;
-                mvaddch(x_pos,y_pos, '@');
-            };
-            if(c == 's') {      //BOTTOM
-                mvaddch(x_pos,y_pos,'.');
-                x_pos+=1;
-                mvaddch(x_pos,y_pos, '@');
-            };
-            if(c == 'q'){       //LEFT
-                mvaddch(x_pos,y_pos,'.');
-                y_pos-=1;
-                mvaddch(x_pos,y_pos, '@');
-            };
-            if(c == 'd') {      //RIGHT
-                mvaddch(x_pos,y_pos,'.');
-                y_pos+=1;
-                mvaddch(x_pos,y_pos, '@');
-            }
+            move ();
         
-
-
     }
-/*
-int c;
-while((c = getch()) != KEY_F(1))
-        {        switch(c)
-                {        case 'z':
-                                printw("%d",c);
-                                break;
-                        case KEY_RIGHT:
-                                printw("%d",c);
-                                break;
-                        case KEY_UP:
-                                printw("%d",c);
-                                break;
-                        case KEY_DOWN:
-                                printw("%d",c);
-                                break;        
-                }
-        }
-*/
 
     getch();
     endwin();
