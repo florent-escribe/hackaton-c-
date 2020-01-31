@@ -3,25 +3,17 @@ using namespace std;
 #include <ncurses.h>
 #include "functions.hpp"
 
+
 int main(void) {
-
-    cbreak();    
-    keypad(stdscr, TRUE);
+   
     level ();
-    noecho();
-    int x_pos = 10;  //coordonnées du héros
-    int y_pos = 17;
+    curs_set(0);
+    int x_pos = 1;
+    int y_pos = 1;
 
-    move(x_pos,y_pos);
+    move(2,3);  // Déplace le curseur tout en bas à droite de l'écran
     addch('@');
     refresh();
-
-
-    while(1) {
-            move ();
-        
-    }
-
     getch();
     endwin();
 
