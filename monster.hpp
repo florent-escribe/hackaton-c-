@@ -2,6 +2,8 @@
 using namespace std;
 #include <vector>
 #include <ncurses.h>
+#include "functions.hpp"
+
 
 class Monstre {
 private:
@@ -14,6 +16,7 @@ private:
 public:
 
     Monstre(vector<char> N, char I, int P, int d, int X, int Y): Name(N), Id(I), PV(P), dg(d), x(X), y(Y) {};
+    Monstre () {};
 
     void mouvement(int x_pos, int y_pos) {
         if (abs(x-x_pos)>=abs(y-y_pos)) {

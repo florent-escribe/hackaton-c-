@@ -15,15 +15,17 @@ int main(void) {
     int* x_ph = &x_h;   //pointeurs vers position du héros
     int* y_ph = &y_h;
 
-    move(*x_ph,*y_ph);
-    addch('@');
+    mvaddch(*x_ph,*y_ph,'@');
+    refresh();
+
+    Monstre monstre = Monstre ('a','a',1,1,4,15);
+    mvaddch(4,15,'M');
     refresh();
 
     while(1) {
-            move_hero (x_ph,y_ph, map);
+        move_hero (x_ph,y_ph, map);
+        move_monster (monstre, x_ph, y_ph, map);
     };
-
-
 
     endwin();
 
