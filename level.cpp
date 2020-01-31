@@ -14,7 +14,6 @@ void level () {
     printw("|....|              \n");
     printw("------              \n");
     refresh();             
-    getch();               
-    endwin();               
+           
     
 }
