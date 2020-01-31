@@ -9,7 +9,7 @@ void move_monster (Monstre monstre,int* x_p,int* y_p, vector<string> carte) {   
     int y = monstre.y;
 
     if (abs(x-*x_p)>=abs(y-*y_p)) {        //plus grand écart selon x
-        if (x>*x_p) {      //on baisse le x du monstre si on peut
+        if (x>=*x_p) {      //on baisse le x du monstre si on peut
             if (carte[x-1][y]=='.') {    //on peut bouger
                 mvaddch(x,y, '.');
                 mvaddch(x-1,y,'M');
@@ -25,7 +25,7 @@ void move_monster (Monstre monstre,int* x_p,int* y_p, vector<string> carte) {   
         };
     }
     else {
-        if (y>*y_p) {      //on baisse le y du monstre si on peut
+        if (y>=*y_p) {      //on baisse le y du monstre si on peut
             if (carte[x][y-1]=='.') {    //on peut bouger
                 mvaddch(x,y, '.');
                 mvaddch(x,y-1,'M');
@@ -41,4 +41,5 @@ void move_monster (Monstre monstre,int* x_p,int* y_p, vector<string> carte) {   
         };
     };
     refresh();
+
 };

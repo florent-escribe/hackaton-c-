@@ -18,13 +18,14 @@ int main(void) {
     mvaddch(*x_ph,*y_ph,'@');
     refresh();
 
-    Monstre monstre = Monstre ('a','a',1,1,4,15);
-    mvaddch(4,15,'M');
+    Monstre monstre = Monstre ('a','a',1,1,5,5);
+    mvaddch(5,5,'M');
     refresh();
 
     while(1) {
         move_hero (x_ph,y_ph, map);
         move_monster (monstre, x_ph, y_ph, map);
+        refresh();
     };
 
     endwin();
