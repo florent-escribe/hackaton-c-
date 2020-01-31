@@ -1,19 +1,32 @@
 #include <iostream>
 using namespace std;
 #include <ncurses.h>
+#include <vector>
+#include <string>
 #include "functions.hpp"
 
-void level () {
+vector<string> level () {
+    vector<string> tab {};
     initscr();
     move(1,0);             
     printw("------    ----------\n");
+    tab.push_back("------    ----------");
     printw("|....|    |........|\n");
+    tab.push_back("|....|    |........|");
     printw("|....| ###+........|\n");
+    tab.push_back("|....| ###+........|");
     printw("|....| #  |........|\n");
+    tab.push_back("|....| #  |........|");
     printw("|....+##  ----------\n");
+    tab.push_back("|....+##  ----------");
     printw("|....|              \n");
+    tab.push_back("|....|              ");
     printw("------              \n");
-    refresh();             
+    tab.push_back("------              ");
+    refresh();
+    return tab;             
            
     
 }
+
+int main () {return 0;}

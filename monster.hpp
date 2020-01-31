@@ -1,6 +1,7 @@
 #include<iostream>
 using namespace std;
 #include <vector>
+#include <ncurses.h>
 
 class Monstre {
 private:
@@ -12,19 +13,19 @@ private:
     int y;
 public:
 
-    Monstre(vector<char> N, char I, int P, int d): Name(N), Id(I), PV(P), dg(d), x(0), y(0) {};
+    Monstre(vector<char> N, char I, int P, int d, int X, int Y): Name(N), Id(I), PV(P), dg(d), x(X), y(Y) {};
 
     void mouvement(int x_pos, int y_pos) {
         if (abs(x-x_pos)>=abs(y-y_pos)) {
-            if (x>x_pos) {x--}
-            if (x<x_pos) {x++}
+            if (x>x_pos) {x--;};
+            if (x<x_pos) {x++;};
         }
         else {
-            if (y>y_pos) {y--}
-            if (y<y_pos) {y++}
-        } 
+            if (y>y_pos) {y--;};
+            if (y<y_pos) {y++;};
+        }
     };
-}
+};
 
 
 
@@ -87,4 +88,24 @@ class Personnage
     int m_vie;
     std::string m_nomArme;
     int m_degatsArme;
+};
+
+
+
+class Objet {
+private:
+    vector<char> Name;
+    char Id;
+    int car;
+    int x;
+    int y;
+public:
+    Objet (vector<char> N, char I, int c,int X, int Y): Name(N), Id(I), car(c), x(X), y(Y) {};
+
+    void find () {
+        addstr("Vous avez trouvé ");
+        for (int i {}; i<Name.size(); i++) {
+            addch(Name[i]);
+        };
+    };
 };
