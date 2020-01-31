@@ -1,10 +1,13 @@
+#include <iostream>
+using namespace std;
 #include <ncurses.h>
+#include "functions.hpp"
 
-int main () {
+void level () {
     initscr();
     move(1,0);             
     printw("------    ----------\n");
-    printw("|..@.|    |........|\n");
+    printw("|....|    |........|\n");
     printw("|....| ###+........|\n");
     printw("|....| #  |........|\n");
     printw("|....+##  ----------\n");
@@ -14,6 +17,4 @@ int main () {
     getch();               
     endwin();               
     
-    
-    return 0;
 }
