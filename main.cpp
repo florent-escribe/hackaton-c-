@@ -40,28 +40,7 @@ int main(void) {
                 mvaddch(x_pos,y_pos, '@');
             }
         
-
-
     }
-/*
-int c;
-while((c = getch()) != KEY_F(1))
-        {        switch(c)
-                {        case 'z':
-                                printw("%d",c);
-                                break;
-                        case KEY_RIGHT:
-                                printw("%d",c);
-                                break;
-                        case KEY_UP:
-                                printw("%d",c);
-                                break;
-                        case KEY_DOWN:
-                                printw("%d",c);
-                                break;        
-                }
-        }
-*/
 
     getch();
     endwin();
