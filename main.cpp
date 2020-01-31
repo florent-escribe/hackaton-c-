@@ -9,18 +9,22 @@ int main(void) {
     keypad(stdscr, TRUE);
     level ();
     noecho();
-    int x_pos = 10;  //coordonnées du héros
-    int y_pos = 17;
+    int x_h = 10;  //coordonnées du héros
+    int y_h = 17;
 
-    move(x_pos,y_pos);
+    int* x_ph = &x_h;   //pointeurs vers position du héros
+    int* y_ph = &y_h;
+
+    move(*x_ph,*y_ph);
     addch('@');
     refresh();
 
+    printw(inwstr());
 
     while(1) {
-            move ();
-        
-    }
+            move_hero (x_ph,y_ph);
+    };
+
 
     getch();
     endwin();

@@ -13,7 +13,6 @@ void level () {
     printw("|....+##  ----------\n");
     printw("|....|              \n");
     printw("------              \n");
-    refresh();             
-           
-    
+    refresh();        
+  
 }
