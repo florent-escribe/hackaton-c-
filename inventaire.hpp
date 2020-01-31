@@ -7,16 +7,18 @@ class Inventaire {
     vector<vector<char>> list;
 public:
     Inventaire (): list({}) {
-        vector<char> str = {'A', ' ', '+', '1', ',', '+', '1',  ' ', 'm', 'a', 'c', 'e'};
-        list.push_back(str);
+        vector<char> str1 = {'A', ' ', '+', '1', ',', '+', '1',  ' ', 'm', 'a', 'c', 'e'};
+        vector<char> str2 = {'S', 'o', 'm', 'e', ' ', 'f', 'o',  'o', 'd'};
+        list.push_back(str1);
+        list.push_back(str2);
     };
-    void print () {
+    void print (WINDOW* w) {
+        wmove(w,0,0);
         for (int i {0}; i<list.size(); i++) {
             for (int j {0}; j<list[i].size(); j++) {  
-                addch(list[i][j]);
-                refresh();
+                waddch(w,list[i][j]);
             };
-            printw("\n");    
+            wprintw(w,"\n");    
         };
     };
     void add (vector<char> o) {list.push_back(o);};
