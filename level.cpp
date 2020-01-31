@@ -1,11 +1,18 @@
 #include <iostream>
 using namespace std;
-#include <ncurses.h>
 #include "functions.hpp"
+
+char caca[]="T'es une bite";
+
+void commandline(char* command) {
+    move(0,0);
+    printw(command);
+
+}
 
 void level () {
     initscr();
-    move(1,0);             
+    move(2,0);             
     printw("------    ----------\n");
     printw("|....|    |........|\n");
     printw("|....| ###+........|\n");
@@ -13,7 +20,7 @@ void level () {
     printw("|....+##  ----------\n");
     printw("|....|              \n");
     printw("------              \n");
-    refresh();             
-           
-    
+    refresh();  
+    commandline(caca);
+
 }
