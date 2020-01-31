@@ -1,7 +1,9 @@
 #include <iostream>
 using namespace std;
 #include <ncurses.h>
+#include<vector>
+#include<string>
 
-void level ();
+vector<string> level ();
 
-void move_hero (int* x_p,int* y_p);
+void move_hero (int* x_p,int* y_p, vector<string> carte);

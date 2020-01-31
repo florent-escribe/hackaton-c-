@@ -19,4 +19,5 @@ public:
             printw("\n");    
         };
     };
+    void add (vector<char> o) {list.push_back(o);};
 };
